@@ -1,20 +1,56 @@
 package OnlineShopping;
 
-public class ProductCatlog {
+public class Product {
 	
-	//Here we are going to provide the ProductList
-	int productId;	//each product have there uniqe id 
+	private String product;
+	private int quantity;
+	private double price;
+ 
 	
-	int selectProduct()
+	public Product()
 	{
-		
-		return productId;
+		product = "";
+		quantity = 0;
+		price = 0.0;
+	}
+	public String getProduct()
+	{
+	return product;
+	}
+	public double getPrice()
+	{
+	return price;
+	}
+	public int getQuantity()
+	{
+	return quantity;
+	}
+ 
+	public Product(String inProduct, int inQuant, double inPrice)
+	{
+		product = new String(inProduct);
+		quantity = inQuant;
+		price = inPrice;
 	}
 	
-	void addToCart()
+	public boolean equals(Product item)
 	{
-		//this function add the selected product to respective user using productId
 		
+		boolean result = false;
+		if (this.product.equalsIgnoreCase(item.getProduct()) && this.price == item.getPrice())
+			result = true;
+		else
+			result = false;
+ 
+		return result;
 	}
+ 
+	public String toString()
+	{
+				String result="";
+ 
+		return result;
+	}
+}
 
 }
